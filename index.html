@@ -28,7 +28,7 @@
             <form>
                 <div class="form-group">
                     <label for="location">Location</label>
-                    <input type="text" class="form-control" id="location" aria-describedby="emailHelp" placeholder="Your Location">
+                    <input type="text" class="form-control" id="location" aria-describedby="emailHelp" placeholder="City and State or Zip Code">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Event</label>
@@ -49,11 +49,11 @@
                     <p class="card-text"><small class="text-muted" id="card1distance"></small></p>
                     <div class="row">
                         <div class="mx-auto accept">
-                            <a href="#"><img src="assets/Images/accept-circular-button-outline.svg" style="height:70px; width:70px"
+                            <a href="#"><img src="assets/Images/accept-circular-button-outline.svg" style="height:65px; width:65px"
                                     alt=""></a>
                         </div>
                         <div class="mx-auto cancel">
-                            <a href="#"><img src="assets/Images/cancel.svg" style="height:75px; width:75px" alt=""></a>
+                            <a href="#"><img src="assets/Images/cancel.svg" style="height:70px; width:70px" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -68,11 +68,11 @@
                     <p class="card-text"><small class="text-muted" id="card2distance"> </small></p>
                     <div class="row">
                         <div class="mx-auto accept">
-                            <a href="#"><img src="assets/Images/accept-circular-button-outline.svg" style="height:70px; width:70px"
+                            <a href="#"><img src="assets/Images/accept-circular-button-outline.svg" style="height:65px; width:65px"
                                     alt=""></a>
                         </div>
                         <div class="mx-auto cancel">
-                            <a href="#"><img src="assets/Images/cancel.svg" style="height:75px; width:75px" alt=""></a>
+                            <a href="#"><img src="assets/Images/cancel.svg" style="height:70px; width:70px" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -87,22 +87,25 @@
                     <p class="card-text"><small class="text-muted" id="card3distance"> </small></p>
                     <div class="row">
                         <div class="mx-auto accept">
-                            <a href="#"><img src="assets/Images/accept-circular-button-outline.svg" style="height:70px; width:70px"
+                            <a href="#"><img src="assets/Images/accept-circular-button-outline.svg" style="height:65px; width:65px"
                                     alt=""></a>
                         </div>
                         <div class="mx-auto cancel">
-                            <a href="#"><img src="assets/Images/cancel.svg" style="height:75px; width:75px" alt=""></a>
+                            <a href="#"><img src="assets/Images/cancel.svg" style="height:70px; width:70px" alt=""></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="map"></div>
+        <div id="map" style="height: 50%; width: 70%; margin-left: auto; margin-right: auto">
+
+        
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwTEMrdyWY4_ZigoBlw6dtlmpvKN_Dh1A&callback=initMap"
+                async defer></script>
+        </div>
     </div>
 
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCay7WGznwyYJGVWq7CYLLsu_xxYXIv6rc"></script>
-   
 </body>
 
 </html>

@@ -2,7 +2,6 @@
   background-color: #f7f7f7;
 }
 
-
 @media screen and (max-width: 540px) {
   .card {
     width: 75%;
@@ -19,4 +18,9 @@
   .accept {
     margin-left: 15px !important;
   }
+}
+
+#map {
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
