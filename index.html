@@ -1,0 +1,114 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="searchlogic.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/CSS/project1.css">
+    <title>Swift Event</title>
+</head>
+
+<body>
+    <ul class="nav justify-content-end pt-2 pr-4 pb-2">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Search</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Favorites</a>
+        </li>
+    </ul>
+
+    <div class="container mt-2">
+        <div class="row-lg-12">
+            <form>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" class="form-control" id="location" aria-describedby="emailHelp" placeholder="Your Location">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Event</label>
+                    <input type="text" class="form-control" id="event" placeholder="What would you like to do?">
+                </div>
+                <button type="submit" class="btn btn-primary" id="search-btn">Search</button>
+            </form>
+        </div>
+
+        <div class="row">
+            <div class="card-deck m-3">
+                <div class="card">
+                    <img class="card-img-top" src="assets/Images/lantern.jpeg" style="height: 15em" alt="Card image cap"
+                        id="card1">
+                    <div class="card-body">
+                        <h5 class="card-title" id="card1title">Card title</h5>
+                        <p class="card-text" id="card1description" style="height: 8em">This is a longer card with
+                            supporting text below as
+                            a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted" id="card1distance">Last updated 3 mins ago</small></p>
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="#"><img src="assets/Images/accept-circular-button-outline.svg" style="height:5vw; width:10vw"
+                                        alt=""></a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#"><img src="assets/Images/cancel.svg" style="height:5vw; width:10vw" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="assets/Images/4-eventtickets.jpg" style="height: 15em" alt="Card image cap"
+                        id="card2">
+                    <div class="card-body">
+                        <h5 class="card-title" id="card2title">Card title</h5>
+                        <p class="card-text" id="card2description" style="height: 8em">This card has supporting text
+                            below as a natural
+                            lead-in to additional
+                            content.</p>
+                        <p class="card-text"><small class="text-muted" id="card2distance">Last updated 3 mins ago</small></p>
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="#"><img src="assets/Images/accept-circular-button-outline.svg" style="height:5vw; width:10vw"
+                                        alt=""></a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#"><img src="assets/Images/cancel.svg" style="height:5vw; width:10vw" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="assets/Images/maxresdefault.jpg" style="height: 15em" alt="Card image cap"
+                        id="card3">
+                    <div class="card-body">
+                        <h5 class="card-title" id="card3title">Card title</h5>
+                        <p class="card-text" id="card3description" style="height: 8em">This is a wider card with
+                            supporting text below as a
+                            natural lead-in to
+                            additional content. This card has even longer content than the first to show that equal
+                            height action.</p>
+                        <p class="card-text"><small class="text-muted" id="card3distance">Last updated 3 mins ago</small></p>
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="#"><img src="assets/Images/accept-circular-button-outline.svg" style="height:5vw; width:10vw"
+                                        alt=""></a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#"><img src="assets/Images/cancel.svg" style="height:5vw; width:10vw" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
