@@ -1,17 +1,15 @@
-$(document).ready(function () {
 
-    // 1. Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyBwGHAx9Uz8wso0gY8znLb6nN6Xnzp0xtY",
-        authDomain: "project1db-d2918.firebaseapp.com",
-        databaseURL: "https://project1db-d2918.firebaseio.com",
-        projectId: "project1db-d2918",
-        storageBucket: "project1db-d2918.appspot.com",
-        messagingSenderId: "234240171369"
-    };
-    firebase.initializeApp(config);
-
-    var database = firebase.database();
+    // // Initialize Firebase
+    // var config = {
+    //     apiKey: "AIzaSyBwGHAx9Uz8wso0gY8znLb6nN6Xnzp0xtY",
+    //     authDomain: "project1db-d2918.firebaseapp.com",
+    //     databaseURL: "https://project1db-d2918.firebaseio.com",
+    //     projectId: "project1db-d2918",
+    //     storageBucket: "project1db-d2918.appspot.com",
+    //     messagingSenderId: "234240171369"
+    // };
+    // firebase.initializeApp(config);
+    // var database = firebase.database();
 
     // Empty input fields
     function inputClear() {
@@ -238,4 +236,3 @@ $(document).ready(function () {
             }
         });
     };
-});

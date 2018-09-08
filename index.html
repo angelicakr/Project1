@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script> -->
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -45,78 +45,82 @@
                     <label for="exampleInputPassword1">Event</label>
                     <input type="text" class="form-control" id="event" placeholder="What would you like to do?">
                 </div>
-                <button type="submit" class="btn btn-primary" id="search-btn">Search</button>
+                <button type="submit" class="btn btn-primary" id="submit">Search</button>
             </form>
         </div>
 
         <!-- Results -->
         <div class="row">
+            <div class="card-deck m-3">
 
-            <!-- Card one -->
-            <div class="card m-3" style="width: 21em">
-                <img class="card-img-top" src="assets/Images/lantern.jpeg" style="height: 15em" alt="Card image cap" id="card1">
-                <div class="card-body">
-                    <h5 class="card-title" id="card1title">Card Title</h5>
-                    <p class="card-text" id="card1description" style="height: 6em"> </p>
-                    <p class="card-text"><small class="text-muted" id="card1distance"></small></p>
-                    <div class="row">
-                        <div class="mx-auto accept">
-                            <a href="#"><img src="assets/Images/accept-circular-button-outline.svg" style="height:70px; width:70px"
-                                    alt=""></a>
-                        </div>
-                        <div class="mx-auto cancel">
-                            <a href="#"><img src="assets/Images/cancel.svg" style="height:75px; width:75px" alt=""></a>
+                <!-- Card one -->
+                <div class="card m-3" style="width: 21em">
+                    <img class="card-img-top" src="assets/Images/lantern.jpeg" style="height: 15em" alt="Card image cap"
+                        id="card1">
+                    <div class="card-body">
+                        <h5 class="card-title" id="card1title">Card Title</h5>
+                        <p class="card-text" id="card1description" style="height: 6em"> </p>
+                        <p class="card-text"><small class="text-muted" id="card1distance"></small></p>
+                        <div class="row">
+                            <div class="mx-auto accept">
+                                <a href="#"><img src="assets/Images/accept-circular-button-outline.svg" style="height:70px; width:70px"
+                                        alt=""></a>
+                            </div>
+                            <div class="mx-auto cancel">
+                                <a href="#"><img src="assets/Images/cancel.svg" style="height:75px; width:75px" alt=""></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Card two -->
-            <div class="card m-3" style="width: 21em">
-                <img class="card-img-top" src="assets/Images/4-eventtickets.jpg" style="height: 15em" alt="Card image cap"
-                    id="card2">
-                <div class="card-body">
-                    <h5 class="card-title" id="card2title">Card title</h5>
-                    <p class="card-text" id="card2description" style="height: 6em"> </p>
-                    <p class="card-text"><small class="text-muted" id="card2distance"> </small></p>
-                    <div class="row">
-                        <div class="mx-auto accept">
-                            <a href="#"><img src="assets/Images/accept-circular-button-outline.svg" style="height:70px; width:70px"
-                                    alt=""></a>
-                        </div>
-                        <div class="mx-auto cancel">
-                            <a href="#"><img src="assets/Images/cancel.svg" style="height:75px; width:75px" alt=""></a>
+                <!-- Card two -->
+                <div class="card m-3" style="width: 21em">
+                    <img class="card-img-top" src="assets/Images/4-eventtickets.jpg" style="height: 15em" alt="Card image cap"
+                        id="card2">
+                    <div class="card-body">
+                        <h5 class="card-title" id="card2title">Card title</h5>
+                        <p class="card-text" id="card2description" style="height: 6em"> </p>
+                        <p class="card-text"><small class="text-muted" id="card2distance"> </small></p>
+                        <div class="row">
+                            <div class="mx-auto accept">
+                                <a href="#"><img src="assets/Images/accept-circular-button-outline.svg" style="height:70px; width:70px"
+                                        alt=""></a>
+                            </div>
+                            <div class="mx-auto cancel">
+                                <a href="#"><img src="assets/Images/cancel.svg" style="height:75px; width:75px" alt=""></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Card Three -->
-            <div class="card m-3" style="width: 21em">
-                <img class="card-img-top" src="assets/Images/maxresdefault.jpg" style="height: 15em" alt="Card image cap"
-                    id="card3">
-                <div class="card-body">
-                    <h5 class="card-title" id="card3title">Card title</h5>
-                    <p class="card-text" id="card3description" style="height: 6em"> </p>
-                    <p class="card-text"><small class="text-muted" id="card3distance"> </small></p>
-                    <div class="row">
-                        <div class="mx-auto accept">
-                            <a href="#"><img src="assets/Images/accept-circular-button-outline.svg" style="height:70px; width:70px"
-                                    alt=""></a>
-                        </div>
-                        <div class="mx-auto cancel">
-                            <a href="#"><img src="assets/Images/cancel.svg" style="height:75px; width:75px" alt=""></a>
+                <!-- Card Three -->
+                <div class="card m-3" style="width: 21em">
+                    <img class="card-img-top" src="assets/Images/maxresdefault.jpg" style="height: 15em" alt="Card image cap"
+                        id="card3">
+                    <div class="card-body">
+                        <h5 class="card-title" id="card3title">Card title</h5>
+                        <p class="card-text" id="card3description" style="height: 6em"> </p>
+                        <p class="card-text"><small class="text-muted" id="card3distance"> </small></p>
+                        <div class="row">
+                            <div class="mx-auto accept">
+                                <a href="#"><img src="assets/Images/accept-circular-button-outline.svg" style="height:70px; width:70px"
+                                        alt=""></a>
+                            </div>
+                            <div class="mx-auto cancel">
+                                <a href="#"><img src="assets/Images/cancel.svg" style="height:75px; width:75px" alt=""></a>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
 
         <!-- Google Maps -->
         <div id="map"></div>
+
     </div>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCay7WGznwyYJGVWq7CYLLsu_xxYXIv6rc&callback=initMap">
-    </script>
+
 
     <!-- External Jquery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -130,6 +134,10 @@
 
     <!-- External Javascript -->
     <script src="assets/javascript/event.js"></script>
+
+    <!-- Google maps link -->
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCay7WGznwyYJGVWq7CYLLsu_xxYXIv6rc&callback=initMap">
+    </script> -->
 
 </body>
 
