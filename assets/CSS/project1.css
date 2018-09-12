@@ -17,4 +17,6 @@ button:focus {
   outline:0;
 }
 
-
+small {
+  font-size: 1em;
+}

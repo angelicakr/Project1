@@ -1,13 +1,13 @@
-// // Initialize Firebase
-// var config = {
-//     apiKey: "AIzaSyBwGHAx9Uz8wso0gY8znLb6nN6Xnzp0xtY",
-//     authDomain: "project1db-d2918.firebaseapp.com",
-//     databaseURL: "https://project1db-d2918.firebaseio.com",
-//     projectId: "project1db-d2918",
-//     storageBucket: "project1db-d2918.appspot.com",
-//     messagingSenderId: "234240171369"
-//   };
-//   firebase.initializeApp(config);
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyBwGHAx9Uz8wso0gY8znLb6nN6Xnzp0xtY",
+    authDomain: "project1db-d2918.firebaseapp.com",
+    databaseURL: "https://project1db-d2918.firebaseio.com",
+    projectId: "project1db-d2918",
+    storageBucket: "project1db-d2918.appspot.com",
+    messagingSenderId: "234240171369"
+  };
+  firebase.initializeApp(config);
 
 // var database = firebase.database();
 
@@ -97,13 +97,23 @@ function ajaxCall(search, location) {
             }
             body.append(p1);
 
-            //Add distance to event
+            //Add event time and date
             var p2 = $("<p>");
             p2.attr("class", "card-text");
             var small = $("<small>");
             small.attr("text-muted");
-            //Add distance to event here
-            small.text("Event is " + "#" + " miles away");
+            var split1 = results[i].start_time.split(" ");
+            // console.log("Time: " + split1[1]); //Time
+            var split2 = split1[1].split(":");
+            var split3 = split1[0].split("-");
+            var date = split3[1] + "/" + split3[2] + "/" + split3[0];
+            var time = split2[0] + ":" + split2[1];
+            small.text("Date: " + date)
+            if (time == "00:00") {
+                small.append("");
+            } else {
+            small.append(" | Time: " + time);
+            }
             p2.append(small);
             body.append(p2);
 
