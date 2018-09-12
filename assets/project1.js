@@ -16,9 +16,9 @@ function inputClear() {
     $("#event").val('');
 };
 
-$(document).ready(function(){
-$("#previous").hide();
-$("#next").hide();
+$(document).ready(function () {
+    $("#previous").hide();
+    $("#next").hide();
 });
 
 //Function to make ajax call
@@ -53,7 +53,7 @@ function ajaxCall(search, location) {
             // Create card
             var cardDiv = $("<div>");
             cardDiv.attr("class", "card m-3");
-            cardDiv.attr("id", "card"+ i);
+            cardDiv.attr("id", "card" + i);
             cardDiv.css("width", "21em");
             //Add link to card
             var link = $("<a>");
@@ -120,7 +120,7 @@ function ajaxCall(search, location) {
             var div1 = $("<div>");
             div1.attr("class", "mx-auto accept");
             var a1 = $("<button>");
-            var like = ("<img src='assets/Images/accept-circular-button-outline.svg' id='like-btn"+ i +"' style='height:65px; width:65px' alt='Like'>");
+            var like = ("<img src='assets/Images/accept-circular-button-outline.svg' id='like-btn" + i + "' style='height:65px; width:65px' alt='Like'>");
             a1.append(like);
             div1.append(a1);
             row.append(div1);
@@ -128,7 +128,7 @@ function ajaxCall(search, location) {
             var div2 = $("<div>");
             div2.attr("class", "mx-auto cancel");
             var a2 = $("<button>");
-            var dislike = ("<img src='assets/Images/cancel.svg' id='dislike-btn"+ i +"' style='height:70px; width:70px' alt='Dislike'>");
+            var dislike = ("<img src='assets/Images/cancel.svg' id='dislike-btn" + i + "' style='height:70px; width:70px' alt='Dislike'>");
             a2.append(dislike);
             div2.append(a2);
             row.append(div2);
@@ -137,52 +137,37 @@ function ajaxCall(search, location) {
         }
 
 
-        function markers() {
-            var event1 = {
-                lat: Number(results[0].latitude),
-                lng: Number(results[0].longitude)
-            };
-            var event2 = {
-                lat: Number(results[1].latitude),
-                lng: Number(results[1].longitude)
-            };
-            var event3 = {
-                lat: Number(results[2].latitude),
-                lng: Number(results[2].longitude)
-            };
+        $("#card3").hide();
+        $("#card4").hide();
+        $("#card5").hide();
+        $("#card6").hide();
+        $("#card7").hide();
+        $("#card8").hide();
 
-            console.log(event1);
-            console.log(event2);
-            console.log(event3);
-            var marker = new google.maps.Marker({
-                position: event1,
-                map: map
-            });
-            var marker = new google.maps.Marker({
-                position: event2,
-                map: map
-            });
-            var marker = new google.maps.Marker({
-                position: event3,
-                map: map
-            });
+        var loop = 0;
+
+        for (var i = 0; i < 9; i++) {
+
+            function markers() {
+                var eventMark = {
+                    lat: Number(results[i].latitude),
+                    lng: Number(results[i].longitude)
+                };
+
+                var marker = new google.maps.Marker({
+                    position: eventMark,
+                    animation: google.maps.Animation.DROP,
+                    map: map
+                });
+            }
+
+            markers();
+
+
+            inputClear();
         }
-
-        markers();
-    $("#card3").hide();
-    $("#card4").hide();
-    $("#card5").hide();
-    $("#card6").hide();
-    $("#card7").hide();
-    $("#card8").hide();
-
-
     });
-
-
-    inputClear();
 }
-
 
 // Initialize Google Map
 function initMap() {
@@ -198,6 +183,7 @@ function initMap() {
     document.getElementById('submit').addEventListener('click', function () {
         geocodeAddress(geocoder, map);
     });
+
 }
 
 // Geocode Location
@@ -221,7 +207,6 @@ function geocodeAddress(geocoder, resultsMap) {
 
 
 
-
 //global variable for keeping track of apiLoop iteration
 var loop = 0;
 
@@ -232,14 +217,14 @@ $(document).on("click", "#submit", function (event) {
     loop = 0;
     $("#next").show();
 
-    
+
     var search = $("#event").val().trim();
     var location = $("#address").val().trim();
 
     //Call the AJAX function when submit button is pushed
     ajaxCall(search, location);
     console.log("Event: " + search + "\n" + "Location: " + location);
-    
+
 });
 
 // create function to loop through next three results from Eventful
@@ -252,23 +237,23 @@ $(document).on("click", "#next", function (event) {
 function nextBtn() {
     if (loop == 0) {
         loop += 3;
-        
+
         //hide
         $("#card0").hide();
         $("#card1").hide();
         $("#card2").hide();
-        
+
         //then display
         $("#card3").show();
         $("#card4").show();
-        $("#card5").show();   
-        
+        $("#card5").show();
+
         //show previous button
         $("#previous").show();
-        
+
     } else if (loop == 3) {
-        loop += 3; 
-        
+        loop += 3;
+
         //hide
         $("#card3").hide();
         $("#card4").hide();
@@ -277,108 +262,107 @@ function nextBtn() {
         //then display
         $("#card6").show();
         $("#card7").show();
-        $("#card8").show(); 
+        $("#card8").show();
 
-    }
-    else if (loop == 6) {
+    } else if (loop == 6) {
         //hide Next button
         $("#next").hide();
     };
-};   
-    //previous button
-    function previousBtn() {
-        if (loop == 6) {
-            //show
-            $("#card3").show();
-            $("#card4").show();
-            $("#card5").show();
-    
-            //then hide
-            $("#card6").hide();
-            $("#card7").hide();
-            $("#card8").hide(); 
-            loop -= 3;
-            //show next button
-            $("#next").show();
-        } else if (loop == 3) {
+};
+//previous button
+function previousBtn() {
+    if (loop == 6) {
+        //show
+        $("#card3").show();
+        $("#card4").show();
+        $("#card5").show();
+
+        //then hide
+        $("#card6").hide();
+        $("#card7").hide();
+        $("#card8").hide();
+        loop -= 3;
+        //show next button
+        $("#next").show();
+    } else if (loop == 3) {
         //show
         $("#card0").show();
         $("#card1").show();
         $("#card2").show();
-        
+
         //then hide
         $("#card3").hide();
         $("#card4").hide();
-        $("#card5").hide(); 
-            loop -= 3;
+        $("#card5").hide();
+        loop -= 3;
         //hide Previous button
         $("#previous").hide();
-        }
+    }
 
-    };    
-    
-    $(document).on("click", "#previous", function (event) {
-        event.preventDefault();
-    
-        previousBtn()
+};
+
+$(document).on("click", "#previous", function (event) {
+    event.preventDefault();
+
+    previousBtn()
+});
+
+
+//likes counter
+likesCount = 0;
+//Logic to house like and dislike
+$(document).on("click", ".accept", function () {
+    //increment Likes count by 1
+    likesCount++;
+    console.log("check for like increment", likesCount);
+    database.ref().push({
+        results: results[i].title,
+        description: results[i].description,
+        time: results[i].start_time,
     });
-
-
-    //likes counter
-    likesCount = 0;
-    //Logic to house like and dislike
-    $(document).on("click", ".accept", function () {
-        //increment Likes count by 1
-        likesCount++;
-        console.log("check for like increment", likesCount);
-        database.ref().push({
-            results: results[i].title,
-            description: results[i].description,
-            time: results[i].start_time,
-        });
-        database.ref().on("child_added", function (childSnapshot) {
-            console.log(childSnapshot.val()); // <-- this is if we need a on event for when something gets added to the DB.
-        });
-        cardDiv.remove();
+    database.ref().on("child_added", function (childSnapshot) {
+        console.log(childSnapshot.val()); // <-- this is if we need a on event for when something gets added to the DB.
     });
-    
-    $(document).on("click", ".cancel", function () {
-        cardDiv.remove();
-    });
+    cardDiv.remove();
+});
 
-    //if dislike button is selected
-    $(document).on("click", "#dislike-btn", function () {
-        //change image to X or something
-        //move array's info to firebase
-    });
+$(document).on("click", ".cancel", function () {
+    cardDiv.remove();
+});
 
-    //Logic for Likes page
+//if dislike button is selected
+$(document).on("click", "#dislike-btn", function () {
+    //change image to X or something
+    //move array's info to firebase
+});
 
-    //If Likes button is pressed
-    //hide search boxes
-    //execute display_likes function  <-- this will display all events from likes DB.
+//Logic for Likes page
 
-    //code for identifying users logged in
-    // -------------------------------------------------------------- (CRITICAL - BLOCK) --------------------------- //
-    // connectionsRef references a specific location in our database.
-    // All of our connections will be stored in this directory.
-    var connectionsRef = database.ref("/connections"); //<--need to change this to likes
+//If Likes button is pressed
+//hide search boxes
+//execute display_likes function  <-- this will display all events from likes DB.
 
-    // '.info/connected' is a special location provided by Firebase that is updated every time
-    // the client's connection state changes.
-    // '.info/connected' is a boolean value, true if the client is connected and false if they are not.
-    var connectedRef = database.ref(".info/connected");
+//code for identifying users logged in
+// -------------------------------------------------------------- (CRITICAL - BLOCK) --------------------------- //
+// connectionsRef references a specific location in our database.
+// All of our connections will be stored in this directory.
+var connectionsRef = database.ref("/connections"); //<--need to change this to likes
 
-    // When the client's connection state changes...
-    connectedRef.on("value", function (snap) {
+// '.info/connected' is a special location provided by Firebase that is updated every time
+// the client's connection state changes.
+// '.info/connected' is a boolean value, true if the client is connected and false if they are not.
+var connectedRef = database.ref(".info/connected");
 
-        // If they are connected..
-        if (snap.val()) {
+// When the client's connection state changes...
+connectedRef.on("value", function (snap) {
 
-            // Add user to the connections list.
-            var con = connectionsRef.push(true);
+    // If they are connected..
+    if (snap.val()) {
 
-            // Remove user from the connection list when they disconnect.
-            con.onDisconnect().remove();
-        }
-    });
+        // Add user to the connections list.
+        var con = connectionsRef.push(true);
+
+        // Remove user from the connection list when they disconnect.
+        con.onDisconnect().remove();
+    }
+});

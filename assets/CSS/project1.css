@@ -1,5 +1,5 @@
 body {
-    background-color: #96d4ec
+    background-color: #f9f9f9;
 }
 .nav {
     background-color: white;
@@ -19,6 +19,7 @@ body {
     font-family: "journal";
     src: url("journal.ttf");
   }
+
   #swift-head {
     font-family: "journal";
     color: red;
@@ -29,7 +30,9 @@ body {
 #event-head {
     /* font-family: "journal"; */
     color: white;
-    background-color: blue;
+    background-color: Black;
     font-size: 55px;
-    
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
