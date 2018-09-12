@@ -1,0 +1,140 @@
+        body {
+            background-color: #efeee7;
+            color: #777777;
+            /* margin: 0 auto;
+            padding: 0; */
+            font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+            background: url("../images/leaves-pattern.png");
+        }
+        /* default values for the header */
+        header {
+            background-color: #ffffff;
+            /* margin-top: 16px; */
+            /* height: 94px; */
+        }
+        /* Name block on the header */
+        #Name {
+            background-color: #4aaaa5;
+            border: 2px solid #cccccc;
+            color:#efeee7;
+            /* height: 50px;
+            width: 200px;
+            float: left; */
+            /* position: absolute;
+            top: 0px; */
+        }
+        /* sets some of the contact info block */
+        #Contact_info {
+            color:#4aaaa5;
+            /* display: block;
+            padding: 30px; */
+        }
+             /* changes the background and font color on hover */
+        #Contact_info a:hover {
+            background-color: #4aaaa5;
+            color: #cccccc;
+        }
+        /* eliminates the dots for the list */
+        /* ul {
+            list-style-type: none;
+            padding: 0;
+            overflow: hidden;
+        } */
+        /* floats the list items to the right on the header */
+        /* li {
+            float: right;
+        }
+        /*sets the alignment and spacing of header list items  */
+        
+        /* changes the background and font color on hover */
+        /* li a:hover {
+            background-color: #3E0CE8;
+            color: #cccccc;
+        } */
+        .container {
+            /* width: 920px;
+            margin: 0 auto; */
+            background-color: #ffffff;
+            /* padding: 20px;
+            border-top: 20px #efeee7;
+            border-bottom: 20px #efeee7; */
+        }
+        h1 {
+            color: #4aaaa5;
+            /* font-size: 28px;
+            margin: 0px;
+            padding: 20px; */
+            font-family: 'Georgia', Times, Times New Roman, serif;
+        }
+        h2 {
+            color: #4aaaa5;
+            font-family: 'Georgia', Times, Times New Roman, serif;
+        }
+        h5 {
+            /* font-size: 24px; */
+            color: #4aaaa5;
+            font-family: 'Georgia', Times, Times New Roman, serif;
+            text-align: center;
+        }
+        .nav-link {
+            font-size: 24px;
+            color: #4aaaa5;
+            font-family: 'Georgia', Times, Times New Roman, serif;
+            text-align: center;
+        }
+        /* #Contact_info { 
+            height: 50px;
+            position: fixed;
+            top: 0px;
+            background-color: #efeee7;
+        }*/
+        /* #main_body {
+            line-height: 1.5;
+            padding: 2;
+        }
+        #bio_image {
+            float: left;
+            height: 200px;
+            width: 200px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+        } */
+        .card {
+            /*position: sticky;
+            bottom: 0; */
+            background-color: #666666;
+            /* height: 50px; */
+            border-top: 5px solid #4aaaa5;
+        }
+        /* #copyright {
+            text-align: center;
+            /* position: fixed; 
+            bottom: 0;
+        } */
+        /* input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        } */
+        
+        input[type=submit] {
+            width: 30%;
+            background-color: #4aaaa5;
+            color: white;
+            padding: 14px 20px;
+            /* margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer; */
+        }
+        input[type=submit]:hover {
+            background-color: #3E0CE8;
+        }
+        /* .Portfolio_images {
+            display: inline-block;
+        } */
+

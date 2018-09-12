@@ -1,3 +1,35 @@
+body {
+    background-color: #96d4ec
+}
 .nav {
+    background-color: white;
+  }
+  #map {
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  button {
+    border: none;
+    cursor: pointer;
+  }
+  button:focus {
+    outline:0;
+  }
+  @font-face {
+    font-family: "journal";
+    src: url("journal.ttf");
+  }
+  #swift-head {
+    font-family: "journal";
+    color: red;
     background-color: #f7f7f7;
+    font-size: 70px;
+    
+}
+#event-head {
+    /* font-family: "journal"; */
+    color: white;
+    background-color: blue;
+    font-size: 55px;
+    
 }
