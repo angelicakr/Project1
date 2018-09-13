@@ -1,13 +1,13 @@
 // Initialize Firebase
-var config = {
-    apiKey: "AIzaSyBwGHAx9Uz8wso0gY8znLb6nN6Xnzp0xtY",
-    authDomain: "project1db-d2918.firebaseapp.com",
-    databaseURL: "https://project1db-d2918.firebaseio.com",
-    projectId: "project1db-d2918",
-    storageBucket: "project1db-d2918.appspot.com",
-    messagingSenderId: "234240171369"
-  };
-  firebase.initializeApp(config);
+// var config = {
+//     apiKey: "AIzaSyBwGHAx9Uz8wso0gY8znLb6nN6Xnzp0xtY",
+//     authDomain: "project1db-d2918.firebaseapp.com",
+//     databaseURL: "https://project1db-d2918.firebaseio.com",
+//     projectId: "project1db-d2918",
+//     storageBucket: "project1db-d2918.appspot.com",
+//     messagingSenderId: "234240171369"
+// };
+// firebase.initializeApp(config);
 
 // var database = firebase.database();
 
@@ -16,7 +16,6 @@ function inputClear() {
     $("#address").val('');
     $("#event").val('');
 };
-
 
 //Function to make ajax call
 function ajaxCall(search, location) {
@@ -45,7 +44,7 @@ function ajaxCall(search, location) {
 
         $(".deck").empty();
 
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < 9; i++) {
 
             // Create card
             var cardDiv = $("<div>");
@@ -103,7 +102,6 @@ function ajaxCall(search, location) {
             var small = $("<small>");
             small.attr("text-muted");
             var split1 = results[i].start_time.split(" ");
-            // console.log("Time: " + split1[1]); //Time
             var split2 = split1[1].split(":");
             var split3 = split1[0].split("-");
             var date = split3[1] + "/" + split3[2] + "/" + split3[0];
@@ -112,7 +110,7 @@ function ajaxCall(search, location) {
             if (time == "00:00") {
                 small.append("");
             } else {
-            small.append(" | Time: " + time);
+                small.append(" | Time: " + time);
             }
             p2.append(small);
             body.append(p2);
@@ -122,6 +120,7 @@ function ajaxCall(search, location) {
             var row = $("<div>");
             row.attr("class", "row");
             body.append(row);
+
             //Add like button
             var div1 = $("<div>");
             div1.attr("class", "mx-auto accept");
@@ -130,6 +129,7 @@ function ajaxCall(search, location) {
             a1.append(like);
             div1.append(a1);
             row.append(div1);
+
             //Add dislike button
             var div2 = $("<div>");
             div2.attr("class", "mx-auto cancel");
@@ -138,6 +138,7 @@ function ajaxCall(search, location) {
             a2.append(dislike);
             div2.append(a2);
             row.append(div2);
+
             //Add completed card to the DOM
             $(".deck").append(cardDiv);
         }
@@ -157,9 +158,6 @@ function ajaxCall(search, location) {
                 lng: Number(results[2].longitude)
             };
 
-            console.log(event1);
-            console.log(event2);
-            console.log(event3);
             var marker = new google.maps.Marker({
                 position: event1,
                 map: map
@@ -177,7 +175,6 @@ function ajaxCall(search, location) {
         markers();
 
         $(document).on("click", ".accept", function () {
-            console.log("hello");
             database.ref().push({
                 results: results[i].title,
                 description: results[i].description,
@@ -185,7 +182,7 @@ function ajaxCall(search, location) {
             });
             cardDiv.remove();
         });
-        
+
         $(document).on("click", ".cancel", function () {
             cardDiv.remove();
         });
@@ -209,7 +206,12 @@ function initMap() {
     var geocoder = new google.maps.Geocoder();
 
     document.getElementById('submit').addEventListener('click', function () {
+
+        if (search === "" || location === "") {
+            $("#noInput").modal();
+        } else {
         geocodeAddress(geocoder, map);
+        };
     });
 }
 
@@ -227,13 +229,9 @@ function geocodeAddress(geocoder, resultsMap) {
             // });
         } else {
             alert('Geocode was not successful for the following reason: ' + status);
-        }
+        };
     });
 }
-
-
-
-
 
 //global variable for keeping track of apiLoop iteration
 var loop = 0;
@@ -247,9 +245,14 @@ $(document).on("click", "#submit", function (event) {
     var search = $("#event").val().trim();
     var location = $("#address").val().trim();
 
+
+    if (search === "" || location === "") {
+        $("#noInput").modal();
+    } else {
     //Call the AJAX function when submit button is pushed
     ajaxCall(search, location);
-    console.log("Event: " + search + "\n" + "Location: " + location);
+    console.log("Location: " + location + "\n" + "Event: " + search);
+    };
 });
 
 // create function to loop through next three results from Eventful
@@ -337,7 +340,7 @@ function nextBtn() {
 
     // code for identifying users logged in
     // -------------------------------------------------------------- (CRITICAL - BLOCK) --------------------------- //
-   
+
 
     // '.info/connected' is a special location provided by Firebase that is updated every time
     // the client's connection state changes.
@@ -356,4 +359,8 @@ function nextBtn() {
     //         // Remove user from the connection list when they disconnect.
     //         con.onDisconnect().remove();
     //     }
-    };
+};
+
+$( document ).ready(function() {
+    $("#noInput").hide();
+});

@@ -2,7 +2,6 @@
   background-color: #f7f7f7;
 }
 
-
 #map {
   margin-top: 5%;
   margin-bottom: 5%;
@@ -14,7 +13,7 @@ button {
 }
 
 button:focus {
-  outline:0;
+  outline: 0;
 }
 
 small {
