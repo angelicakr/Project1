@@ -196,9 +196,6 @@ function ajaxCall(search, location) {
 // Initialize Google Map
 function initMap() {
 
-    var search = $("#event").val().trim();
-    var location = $("#address").val().trim();
-
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 8,
         center: {
@@ -209,31 +206,30 @@ function initMap() {
     var geocoder = new google.maps.Geocoder();
 
     document.getElementById('submit').addEventListener('click', function () {
-
-        if (search === "" || location === "") {
-            $("#noInput").modal();
-        } else {
-            geocodeAddress(geocoder, map);
-        };
+        geocodeAddress(geocoder, map);
     });
 }
 
 // Geocode Location
 function geocodeAddress(geocoder, resultsMap) {
     var address = document.getElementById('address').value;
-    geocoder.geocode({
-        'address': address
-    }, function (results, status) {
-        if (status === 'OK') {
-            resultsMap.setCenter(results[0].geometry.location);
-            // var marker = new google.maps.Marker({
-            //   map: resultsMap,
-            //   position: results[0].geometry.location
-            // });
-        } else {
-            alert('Geocode was not successful for the following reason: ' + status);
-        }
-    });
+    if (address === "") {
+        $("#noInput").modal();
+    } else {
+        geocoder.geocode({
+            'address': address
+        }, function (results, status) {
+            if (status === 'OK') {
+                resultsMap.setCenter(results[0].geometry.location);
+                // var marker = new google.maps.Marker({
+                //   map: resultsMap,
+                //   position: results[0].geometry.location
+                // });
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    };
 }
 
 //global variable for keeping track of apiLoop iteration
