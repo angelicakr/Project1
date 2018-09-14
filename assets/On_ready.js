@@ -360,7 +360,3 @@ function nextBtn() {
     //         con.onDisconnect().remove();
     //     }
 };
-
-$( document ).ready(function() {
-    $("#noInput").hide();
-});
